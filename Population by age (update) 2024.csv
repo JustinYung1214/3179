@@ -1,0 +1,345 @@
+﻿S/T name,SA4 code,SA4 name,SA3 code,SA3 name,SA2 code,SA2 name,0–4,5–9,10–14,Total persons,Child_count ,child_density_per_100
+Victoria,206,Melbourne - Inner,20601,Brunswick - Coburg,206011106,Brunswick East,557,430,370,14438,1357,9.3988
+Victoria,206,Melbourne - Inner,20601,Brunswick - Coburg,206011107,Brunswick West,699,640,604,15644,1943,12.4201
+Victoria,206,Melbourne - Inner,20601,Brunswick - Coburg,206011109,Pascoe Vale South,539,656,718,10869,1913,17.6005
+Victoria,206,Melbourne - Inner,20601,Brunswick - Coburg,206011495,Brunswick - North,572,374,463,14595,1409,9.6540
+Victoria,206,Melbourne - Inner,20601,Brunswick - Coburg,206011496,Brunswick - South,551,357,322,15190,1230,8.0974
+Victoria,206,Melbourne - Inner,20601,Brunswick - Coburg,206011497,Coburg - East,667,509,556,13966,1732,12.4015
+Victoria,206,Melbourne - Inner,20601,Brunswick - Coburg,206011498,Coburg - West,776,794,736,14835,2306,15.5443
+Victoria,206,Melbourne - Inner,20602,Darebin - South,206021110,Alphington - Fairfield,464,483,485,9688,1432,14.7812
+Victoria,206,Melbourne - Inner,20602,Darebin - South,206021112,Thornbury,981,877,935,19982,2793,13.9776
+Victoria,206,Melbourne - Inner,20602,Darebin - South,206021499,Northcote - East,705,715,791,15920,2211,13.8882
+Victoria,206,Melbourne - Inner,20602,Darebin - South,206021500,Northcote - West,449,474,530,10953,1453,13.2658
+Victoria,206,Melbourne - Inner,20603,Essendon,206031113,Ascot Vale,968,870,813,16154,2651,16.4108
+Victoria,206,Melbourne - Inner,20603,Essendon,206031115,Flemington,521,410,327,10290,1258,12.2255
+Victoria,206,Melbourne - Inner,20603,Essendon,206031116,Moonee Ponds,741,813,729,17823,2283,12.8093
+Victoria,206,Melbourne - Inner,20603,Essendon,206031501,Essendon (West) - Aberfeldie,711,818,988,17156,2517,14.6713
+Victoria,206,Melbourne - Inner,20603,Essendon,206031502,Essendon - East,480,548,623,12946,1651,12.7530
+Victoria,206,Melbourne - Inner,20604,Melbourne City,206041117,Carlton,275,215,264,23954,754,3.1477
+Victoria,206,Melbourne - Inner,20604,Melbourne City,206041118,Docklands,632,430,253,18567,1315,7.0825
+Victoria,206,Melbourne - Inner,20604,Melbourne City,206041119,East Melbourne,119,84,96,5222,299,5.7258
+Victoria,206,Melbourne - Inner,20604,Melbourne City,206041120,Flemington Racecourse,1,0,0,78,1,1.2821
+Victoria,206,Melbourne - Inner,20604,Melbourne City,206041121,Kensington (Vic.),586,480,433,11699,1499,12.8131
+Victoria,206,Melbourne - Inner,20604,Melbourne City,206041124,Parkville,170,127,120,8293,417,5.0283
+Victoria,206,Melbourne - Inner,20604,Melbourne City,206041125,South Yarra - West,226,218,149,6946,593,8.5373
+Victoria,206,Melbourne - Inner,20604,Melbourne City,206041127,West Melbourne - Industrial,0,0,0,0,0,0.0000
+Victoria,206,Melbourne - Inner,20604,Melbourne City,206041503,Melbourne CBD - East,182,135,93,13697,410,2.9934
+Victoria,206,Melbourne - Inner,20604,Melbourne City,206041504,Melbourne CBD - North,235,128,138,23579,501,2.1248
+Victoria,206,Melbourne - Inner,20604,Melbourne City,206041505,Melbourne CBD - West,268,168,130,21528,566,2.6291
+Victoria,206,Melbourne - Inner,20604,Melbourne City,206041506,North Melbourne,575,501,596,19221,1672,8.6988
+Victoria,206,Melbourne - Inner,20604,Melbourne City,206041507,Royal Botanic Gardens Victoria,0,0,0,0,0,0.0000
+Victoria,206,Melbourne - Inner,20604,Melbourne City,206041508,Southbank (West) - South Wharf,208,140,136,7866,484,6.1531
+Victoria,206,Melbourne - Inner,20604,Melbourne City,206041509,Southbank - East,427,291,206,19428,924,4.7560
+Victoria,206,Melbourne - Inner,20604,Melbourne City,206041510,West Melbourne - Residential,231,187,227,9301,645,6.9347
+Victoria,206,Melbourne - Inner,20605,Port Phillip,206051128,Albert Park,681,677,735,17184,2093,12.1799
+Victoria,206,Melbourne - Inner,20605,Port Phillip,206051129,Elwood,677,524,618,15961,1819,11.3965
+Victoria,206,Melbourne - Inner,20605,Port Phillip,206051130,Port Melbourne,738,783,737,16884,2258,13.3736
+Victoria,206,Melbourne - Inner,20605,Port Phillip,206051134,St Kilda East,755,612,575,17332,1942,11.2047
+Victoria,206,Melbourne - Inner,20605,Port Phillip,206051511,Port Melbourne Industrial,87,85,85,2611,257,9.8430
+Victoria,206,Melbourne - Inner,20605,Port Phillip,206051512,South Melbourne,457,410,430,12916,1297,10.0418
+Victoria,206,Melbourne - Inner,20605,Port Phillip,206051513,St Kilda - Central,379,283,234,13725,896,6.5282
+Victoria,206,Melbourne - Inner,20605,Port Phillip,206051514,St Kilda - West,356,303,345,16059,1004,6.2519
+Victoria,206,Melbourne - Inner,20606,Stonnington - West,206061135,Armadale,405,394,360,9997,1159,11.5935
+Victoria,206,Melbourne - Inner,20606,Stonnington - West,206061136,Prahran - Windsor,688,453,374,20928,1515,7.2391
+Victoria,206,Melbourne - Inner,20606,Stonnington - West,206061138,Toorak,427,463,567,13504,1457,10.7894
+Victoria,206,Melbourne - Inner,20606,Stonnington - West,206061515,South Yarra - North,279,158,189,13633,626,4.5918
+Victoria,206,Melbourne - Inner,20606,Stonnington - West,206061516,South Yarra - South,313,241,231,10558,785,7.4351
+Victoria,206,Melbourne - Inner,20607,Yarra,206071139,Abbotsford,399,218,188,10294,805,7.8201
+Victoria,206,Melbourne - Inner,20607,Yarra,206071140,Carlton North - Princes Hill,330,248,258,8747,836,9.5576
+Victoria,206,Melbourne - Inner,20607,Yarra,206071141,Collingwood,501,406,345,11145,1252,11.2337
+Victoria,206,Melbourne - Inner,20607,Yarra,206071142,Fitzroy,464,364,318,11984,1146,9.5628
+Victoria,206,Melbourne - Inner,20607,Yarra,206071143,Fitzroy North,471,488,535,13722,1494,10.8876
+Victoria,206,Melbourne - Inner,20607,Yarra,206071145,Clifton Hill - Alphington,547,590,504,11292,1641,14.5324
+Victoria,206,Melbourne - Inner,20607,Yarra,206071517,Richmond (South) - Cremorne,716,507,550,19230,1773,9.2200
+Victoria,206,Melbourne - Inner,20607,Yarra,206071518,Richmond - North,477,349,365,15319,1191,7.7747
+Victoria,207,Melbourne - Inner East,20701,Boroondara,207011146,Ashburton (Vic.),421,522,601,8403,1544,18.3744
+Victoria,207,Melbourne - Inner East,20701,Boroondara,207011147,Balwyn,456,903,1190,16966,2549,15.0242
+Victoria,207,Melbourne - Inner East,20701,Boroondara,207011148,Balwyn North,721,1185,1776,22325,3682,16.4927
+Victoria,207,Melbourne - Inner East,20701,Boroondara,207011149,Camberwell,863,1146,1365,22120,3374,15.2532
+Victoria,207,Melbourne - Inner East,20701,Boroondara,207011150,Glen Iris - East,777,1098,1230,17537,3105,17.7054
+Victoria,207,Melbourne - Inner East,20701,Boroondara,207011152,Hawthorn East,594,749,813,17318,2156,12.4495
+Victoria,207,Melbourne - Inner East,20701,Boroondara,207011154,Kew East,268,367,457,6780,1092,16.1062
+Victoria,207,Melbourne - Inner East,20701,Boroondara,207011155,Surrey Hills (West) - Canterbury,568,839,1054,16231,2461,15.1623
+Victoria,207,Melbourne - Inner East,20701,Boroondara,207011519,Hawthorn - North,370,396,465,10820,1231,11.3771
+Victoria,207,Melbourne - Inner East,20701,Boroondara,207011520,Hawthorn - South,406,420,528,13481,1354,10.0438
+Victoria,207,Melbourne - Inner East,20701,Boroondara,207011521,Kew - South,434,524,758,12352,1716,13.8925
+Victoria,207,Melbourne - Inner East,20701,Boroondara,207011522,Kew - West,549,599,755,13675,1903,13.9159
+Victoria,207,Melbourne - Inner East,20702,Manningham - West,207021156,Bulleen,511,541,610,11762,1662,14.1302
+Victoria,207,Melbourne - Inner East,20702,Manningham - West,207021157,Doncaster,1208,1331,1300,27904,3839,13.7579
+Victoria,207,Melbourne - Inner East,20702,Manningham - West,207021159,Templestowe,695,1040,1080,17467,2815,16.1161
+Victoria,207,Melbourne - Inner East,20702,Manningham - West,207021160,Templestowe Lower,662,760,894,14612,2316,15.8500
+Victoria,207,Melbourne - Inner East,20702,Manningham - West,207021424,Doncaster East - North,624,1031,1152,16352,2807,17.1661
+Victoria,207,Melbourne - Inner East,20702,Manningham - West,207021425,Doncaster East - South,827,1219,1190,16710,3236,19.3656
+Victoria,207,Melbourne - Inner East,20703,Whitehorse - West,207031161,Blackburn,1005,1195,1441,23471,3641,15.5128
+Victoria,207,Melbourne - Inner East,20703,Whitehorse - West,207031162,Blackburn South,454,671,757,11079,1882,16.9871
+Victoria,207,Melbourne - Inner East,20703,Whitehorse - West,207031163,Box Hill,891,990,1186,26668,3067,11.5007
+Victoria,207,Melbourne - Inner East,20703,Whitehorse - West,207031164,Box Hill North,866,982,1141,19435,2989,15.3795
+Victoria,207,Melbourne - Inner East,20703,Whitehorse - West,207031165,Burwood (Vic.),482,448,517,14918,1447,9.6997
+Victoria,207,Melbourne - Inner East,20703,Whitehorse - West,207031166,Burwood East,466,619,551,12366,1636,13.2298
+Victoria,207,Melbourne - Inner East,20703,Whitehorse - West,207031167,Surrey Hills (East) - Mont Albert,414,558,631,10765,1603,14.8908
+Victoria,208,Melbourne - Inner South,20801,Bayside,208011168,Beaumaris,458,800,1147,14422,2405,16.6759
+Victoria,208,Melbourne - Inner South,20801,Bayside,208011169,Brighton (Vic.),866,1191,1463,24107,3520,14.6016
+Victoria,208,Melbourne - Inner South,20801,Bayside,208011170,Brighton East,692,1003,1315,17261,3010,17.4382
+Victoria,208,Melbourne - Inner South,20801,Bayside,208011171,Highett (West) - Cheltenham,795,855,843,13098,2493,19.0334
+Victoria,208,Melbourne - Inner South,20801,Bayside,208011172,Hampton,843,1076,1277,19208,3196,16.6389
+Victoria,208,Melbourne - Inner South,20801,Bayside,208011173,Sandringham - Black Rock,630,905,1109,18022,2644,14.6710
+Victoria,208,Melbourne - Inner South,20802,Glen Eira,208021174,Bentleigh - McKinnon,1177,1567,1972,26825,4716,17.5806
+Victoria,208,Melbourne - Inner South,20802,Glen Eira,208021176,Carnegie,905,866,780,20903,2551,12.2040
+Victoria,208,Melbourne - Inner South,20802,Glen Eira,208021177,Caulfield - North,1231,1341,1383,24485,3955,16.1527
+Victoria,208,Melbourne - Inner South,20802,Glen Eira,208021178,Caulfield - South,944,1074,1130,18975,3148,16.5903
+Victoria,208,Melbourne - Inner South,20802,Glen Eira,208021179,Elsternwick,678,665,729,12765,2072,16.2319
+Victoria,208,Melbourne - Inner South,20802,Glen Eira,208021180,Hughesdale,390,340,411,8088,1141,14.1073
+Victoria,208,Melbourne - Inner South,20802,Glen Eira,208021181,Murrumbeena,468,543,554,10045,1565,15.5799
+Victoria,208,Melbourne - Inner South,20802,Glen Eira,208021182,Ormond - Glen Huntly,661,640,736,14736,2037,13.8233
+Victoria,208,Melbourne - Inner South,20802,Glen Eira,208021426,Bentleigh East - North,826,1242,1421,17553,3489,19.8769
+Victoria,208,Melbourne - Inner South,20802,Glen Eira,208021427,Bentleigh East - South,871,910,974,14770,2755,18.6527
+Victoria,208,Melbourne - Inner South,20803,Kingston,208031183,Aspendale Gardens - Waterways,343,531,609,9099,1483,16.2985
+Victoria,208,Melbourne - Inner South,20803,Kingston,208031184,Braeside,0,0,0,28,0,0.0000
+Victoria,208,Melbourne - Inner South,20803,Kingston,208031185,Carrum - Patterson Lakes,675,687,624,12445,1986,15.9582
+Victoria,208,Melbourne - Inner South,20803,Kingston,208031186,Chelsea - Bonbeach,967,933,818,15882,2718,17.1137
+Victoria,208,Melbourne - Inner South,20803,Kingston,208031187,Chelsea Heights,328,386,334,5456,1048,19.2082
+Victoria,208,Melbourne - Inner South,20803,Kingston,208031188,Highett (East) - Cheltenham,1545,1467,1400,25866,4412,17.0571
+Victoria,208,Melbourne - Inner South,20803,Kingston,208031189,Edithvale - Aspendale,816,894,937,14151,2647,18.7054
+Victoria,208,Melbourne - Inner South,20803,Kingston,208031190,Mentone,699,766,793,13987,2258,16.1436
+Victoria,208,Melbourne - Inner South,20803,Kingston,208031191,Moorabbin - Heatherton,559,622,649,9708,1830,18.8504
+Victoria,208,Melbourne - Inner South,20803,Kingston,208031192,Moorabbin Airport,0,0,0,26,0,0.0000
+Victoria,208,Melbourne - Inner South,20803,Kingston,208031193,Mordialloc - Parkdale,1093,1182,1459,22229,3734,16.7979
+Victoria,208,Melbourne - Inner South,20804,Stonnington - East,208041194,Malvern - Glen Iris,784,950,1131,21680,2865,13.2149
+Victoria,208,Melbourne - Inner South,20804,Stonnington - East,208041195,Malvern East,970,1189,1287,23738,3446,14.5168
+Victoria,209,Melbourne - North East,20901,Banyule,209011196,Bundoora - East,531,526,487,10240,1544,15.0781
+Victoria,209,Melbourne - North East,20901,Banyule,209011197,Greensborough,1246,1340,1352,21338,3938,18.4553
+Victoria,209,Melbourne - North East,20901,Banyule,209011198,Heidelberg - Rosanna,865,970,1071,16915,2906,17.1800
+Victoria,209,Melbourne - North East,20901,Banyule,209011199,Heidelberg West,1112,884,777,16703,2773,16.6018
+Victoria,209,Melbourne - North East,20901,Banyule,209011200,Ivanhoe,549,632,697,13151,1878,14.2803
+Victoria,209,Melbourne - North East,20901,Banyule,209011201,Ivanhoe East - Eaglemont,286,408,532,8100,1226,15.1358
+Victoria,209,Melbourne - North East,20901,Banyule,209011202,Montmorency - Briar Hill,903,1143,1179,16957,3225,19.0187
+Victoria,209,Melbourne - North East,20901,Banyule,209011203,Viewbank - Yallambie,1025,1253,1324,19009,3602,18.9489
+Victoria,209,Melbourne - North East,20901,Banyule,209011204,Watsonia,663,556,573,9518,1792,18.8275
+Victoria,209,Melbourne - North East,20902,Darebin - North,209021205,Kingsbury,446,465,446,12508,1357,10.8491
+Victoria,209,Melbourne - North East,20902,Darebin - North,209021428,Preston - East,1093,917,905,22596,2915,12.9005
+Victoria,209,Melbourne - North East,20902,Darebin - North,209021429,Preston - West,664,734,718,13470,2116,15.7090
+Victoria,209,Melbourne - North East,20902,Darebin - North,209021523,Reservoir - North East,936,775,564,15976,2275,14.2401
+Victoria,209,Melbourne - North East,20902,Darebin - North,209021524,Reservoir - North West,559,496,445,9834,1500,15.2532
+Victoria,209,Melbourne - North East,20902,Darebin - North,209021525,Reservoir - South East,793,630,596,13875,2019,14.5514
+Victoria,209,Melbourne - North East,20902,Darebin - North,209021526,Reservoir - South West,944,811,749,15161,2504,16.5161
+Victoria,209,Melbourne - North East,20903,Nillumbik - Kinglake,209031209,Eltham,1138,1451,1613,23554,4202,17.8399
+Victoria,209,Melbourne - North East,20903,Nillumbik - Kinglake,209031210,Hurstbridge,191,225,230,3540,646,18.2486
+Victoria,209,Melbourne - North East,20903,Nillumbik - Kinglake,209031211,Kinglake,255,263,287,4399,805,18.2996
+Victoria,209,Melbourne - North East,20903,Nillumbik - Kinglake,209031212,Panton Hill - St Andrews,211,218,317,5153,746,14.4770
+Victoria,209,Melbourne - North East,20903,Nillumbik - Kinglake,209031213,Plenty - Yarrambat,393,576,664,9609,1633,16.9945
+Victoria,209,Melbourne - North East,20903,Nillumbik - Kinglake,209031214,Research - North Warrandyte,333,417,564,7034,1314,18.6807
+Victoria,209,Melbourne - North East,20903,Nillumbik - Kinglake,209031215,Wattle Glen - Diamond Creek,909,960,983,14803,2852,19.2664
+Victoria,209,Melbourne - North East,20904,Whittlesea - Wallan,209041216,Bundoora - North,273,314,355,8005,942,11.7676
+Victoria,209,Melbourne - North East,20904,Whittlesea - Wallan,209041217,Bundoora - West,316,326,232,6742,874,12.9635
+Victoria,209,Melbourne - North East,20904,Whittlesea - Wallan,209041220,Mill Park - North,854,912,905,17706,2671,15.0853
+Victoria,209,Melbourne - North East,20904,Whittlesea - Wallan,209041221,Mill Park - South,602,551,605,11322,1758,15.5273
+Victoria,209,Melbourne - North East,20904,Whittlesea - Wallan,209041223,Thomastown,1150,1024,902,20538,3076,14.9771
+Victoria,209,Melbourne - North East,20904,Whittlesea - Wallan,209041224,Wallan,2545,2457,2061,28415,7063,24.8566
+Victoria,209,Melbourne - North East,20904,Whittlesea - Wallan,209041225,Whittlesea,1394,1228,1071,15811,3693,23.3572
+Victoria,209,Melbourne - North East,20904,Whittlesea - Wallan,209041431,Epping - East,752,815,889,13492,2456,18.2034
+Victoria,209,Melbourne - North East,20904,Whittlesea - Wallan,209041432,Epping - South,479,458,398,8413,1335,15.8683
+Victoria,209,Melbourne - North East,20904,Whittlesea - Wallan,209041433,Epping (Vic.) - West,944,1049,1088,12905,3081,23.8745
+Victoria,209,Melbourne - North East,20904,Whittlesea - Wallan,209041435,South Morang - North,768,910,1060,13070,2738,20.9487
+Victoria,209,Melbourne - North East,20904,Whittlesea - Wallan,209041436,South Morang - South,701,765,792,12889,2258,17.5188
+Victoria,209,Melbourne - North East,20904,Whittlesea - Wallan,209041437,Wollert,3221,3402,2714,33578,9337,27.8069
+Victoria,209,Melbourne - North East,20904,Whittlesea - Wallan,209041527,Doreen - North,1073,1476,1586,17231,4135,23.9974
+Victoria,209,Melbourne - North East,20904,Whittlesea - Wallan,209041528,Doreen - South,1078,1152,972,11810,3202,27.1126
+Victoria,209,Melbourne - North East,20904,Whittlesea - Wallan,209041529,Lalor - East,584,528,477,10195,1589,15.5861
+Victoria,209,Melbourne - North East,20904,Whittlesea - Wallan,209041530,Lalor - West,844,983,857,13933,2684,19.2636
+Victoria,209,Melbourne - North East,20904,Whittlesea - Wallan,209041531,Mernda - North,869,1025,961,12038,2855,23.7166
+Victoria,209,Melbourne - North East,20904,Whittlesea - Wallan,209041532,Mernda - South,1084,1234,1171,13526,3489,25.7948
+Victoria,210,Melbourne - North West,21001,Keilor,210011226,Airport West,534,513,401,8647,1448,16.7457
+Victoria,210,Melbourne - North West,21001,Keilor,210011227,Essendon Airport,0,0,0,14,0,0.0000
+Victoria,210,Melbourne - North West,21001,Keilor,210011228,Keilor,447,464,498,8701,1409,16.1935
+Victoria,210,Melbourne - North West,21001,Keilor,210011230,Niddrie - Essendon West,430,446,467,7925,1343,16.9464
+Victoria,210,Melbourne - North West,21001,Keilor,210011231,Strathmore,386,630,848,10457,1864,17.8254
+Victoria,210,Melbourne - North West,21001,Keilor,210011533,Avondale Heights,668,748,687,12822,2103,16.4015
+Victoria,210,Melbourne - North West,21001,Keilor,210011534,Keilor East,783,863,960,15497,2606,16.8162
+Victoria,210,Melbourne - North West,21002,Macedon Ranges,210021232,Gisborne,921,1225,1202,15434,3348,21.6924
+Victoria,210,Melbourne - North West,21002,Macedon Ranges,210021233,Macedon,173,265,295,3645,733,20.1097
+Victoria,210,Melbourne - North West,21002,Macedon Ranges,210021234,Riddells Creek,226,271,317,4547,814,17.9019
+Victoria,210,Melbourne - North West,21002,Macedon Ranges,210021235,Romsey,741,755,765,11489,2261,19.6797
+Victoria,210,Melbourne - North West,21003,Moreland - North,210031236,Coburg North,500,553,491,8935,1544,17.2804
+Victoria,210,Melbourne - North West,21003,Moreland - North,210031237,Fawkner,1051,1100,1000,14960,3151,21.0628
+Victoria,210,Melbourne - North West,21003,Moreland - North,210031439,Gowanbrae,165,174,175,3189,514,16.1179
+Victoria,210,Melbourne - North West,21003,Moreland - North,210031440,Hadfield,515,414,339,6654,1268,19.0562
+Victoria,210,Melbourne - North West,21003,Moreland - North,210031535,Glenroy - East,1175,866,714,15735,2755,17.5087
+Victoria,210,Melbourne - North West,21003,Moreland - North,210031536,Glenroy - West,636,484,386,9575,1506,15.7285
+Victoria,210,Melbourne - North West,21003,Moreland - North,210031537,Oak Park,534,477,389,8488,1400,16.4939
+Victoria,210,Melbourne - North West,21003,Moreland - North,210031538,Pascoe Vale,1196,1002,966,18434,3164,17.1639
+Victoria,210,Melbourne - North West,21004,Sunbury,210041240,Sunbury,931,909,978,14810,2818,19.0277
+Victoria,210,Melbourne - North West,21004,Sunbury,210041539,Diggers Rest,699,500,368,6967,1567,22.4917
+Victoria,210,Melbourne - North West,21004,Sunbury,210041540,Sunbury - South,1011,1025,1063,16819,3099,18.4256
+Victoria,210,Melbourne - North West,21004,Sunbury,210041541,Sunbury - West,836,745,710,11404,2291,20.0894
+Victoria,210,Melbourne - North West,21005,Tullamarine - Broadmeadows,210051242,Broadmeadows,1043,986,899,14786,2928,19.8025
+Victoria,210,Melbourne - North West,21005,Tullamarine - Broadmeadows,210051243,Campbellfield - Coolaroo,1102,1233,1198,16438,3533,21.4929
+Victoria,210,Melbourne - North West,21005,Tullamarine - Broadmeadows,210051245,Gladstone Park - Westmeadows,1051,1066,1004,18264,3121,17.0883
+Victoria,210,Melbourne - North West,21005,Tullamarine - Broadmeadows,210051246,Greenvale - Bulla,1826,1842,1819,25723,5487,21.3311
+Victoria,210,Melbourne - North West,21005,Tullamarine - Broadmeadows,210051247,Meadow Heights,1017,1040,1102,14960,3159,21.1163
+Victoria,210,Melbourne - North West,21005,Tullamarine - Broadmeadows,210051248,Melbourne Airport,0,10,0,130,10,7.6923
+Victoria,210,Melbourne - North West,21005,Tullamarine - Broadmeadows,210051250,Tullamarine,387,298,302,6710,987,14.7094
+Victoria,210,Melbourne - North West,21005,Tullamarine - Broadmeadows,210051441,Craigieburn - Central,579,546,579,8207,1704,20.7628
+Victoria,210,Melbourne - North West,21005,Tullamarine - Broadmeadows,210051442,Craigieburn - North,906,985,1131,12882,3022,23.4591
+Victoria,210,Melbourne - North West,21005,Tullamarine - Broadmeadows,210051443,Craigieburn - South,1821,2005,1941,24086,5767,23.9434
+Victoria,210,Melbourne - North West,21005,Tullamarine - Broadmeadows,210051445,Mickleham - Yuroke,4214,3781,2563,35371,10558,29.8493
+Victoria,210,Melbourne - North West,21005,Tullamarine - Broadmeadows,210051542,Craigieburn - North West,1192,1132,903,11198,3227,28.8176
+Victoria,210,Melbourne - North West,21005,Tullamarine - Broadmeadows,210051543,Craigieburn - West,1209,1305,1251,14760,3765,25.5081
+Victoria,210,Melbourne - North West,21005,Tullamarine - Broadmeadows,210051544,Roxburgh Park (South) - Somerton,516,558,649,9731,1723,17.7063
+Victoria,210,Melbourne - North West,21005,Tullamarine - Broadmeadows,210051545,Roxburgh Park - North,922,1191,1329,15427,3442,22.3115
+Victoria,211,Melbourne - Outer East,21101,Knox,211011251,Bayswater,733,691,710,13305,2134,16.0391
+Victoria,211,Melbourne - Outer East,21101,Knox,211011254,Knoxfield - Scoresby,862,989,1119,17142,2970,17.3259
+Victoria,211,Melbourne - Outer East,21101,Knox,211011255,Lysterfield,260,358,469,6614,1087,16.4348
+Victoria,211,Melbourne - Outer East,21101,Knox,211011256,Rowville - Central,744,841,889,15731,2474,15.7269
+Victoria,211,Melbourne - Outer East,21101,Knox,211011257,Rowville - North,338,458,539,7894,1335,16.9116
+Victoria,211,Melbourne - Outer East,21101,Knox,211011258,Rowville - South,488,586,598,10594,1672,15.7825
+Victoria,211,Melbourne - Outer East,21101,Knox,211011259,Wantirna,685,964,966,14631,2615,17.8730
+Victoria,211,Melbourne - Outer East,21101,Knox,211011260,Wantirna South,697,929,992,18388,2618,14.2375
+Victoria,211,Melbourne - Outer East,21101,Knox,211011446,Boronia,1409,1370,1284,24565,4063,16.5398
+Victoria,211,Melbourne - Outer East,21101,Knox,211011447,Ferntree Gully - North,800,769,836,14530,2405,16.5520
+Victoria,211,Melbourne - Outer East,21101,Knox,211011448,Ferntree Gully (South) - Upper Ferntree Gully,885,944,886,15600,2715,17.4038
+Victoria,211,Melbourne - Outer East,21101,Knox,211011449,The Basin,244,264,298,4345,806,18.5501
+Victoria,211,Melbourne - Outer East,21102,Manningham - East,211021261,Donvale - Park Orchards,645,957,1216,16778,2818,16.7958
+Victoria,211,Melbourne - Outer East,21102,Manningham - East,211021262,Warrandyte - Wonga Park,366,506,708,10238,1580,15.4327
+Victoria,211,Melbourne - Outer East,21103,Maroondah,211031263,Bayswater North,687,730,683,12043,2100,17.4375
+Victoria,211,Melbourne - Outer East,21103,Maroondah,211031265,Croydon Hills - Warranwood,959,1140,1264,18391,3363,18.2861
+Victoria,211,Melbourne - Outer East,21103,Maroondah,211031266,Ringwood,1085,1119,1064,19633,3268,16.6454
+Victoria,211,Melbourne - Outer East,21103,Maroondah,211031267,Ringwood East,1220,1389,1436,21866,4045,18.4990
+Victoria,211,Melbourne - Outer East,21103,Maroondah,211031268,Ringwood North,497,600,680,9803,1777,18.1271
+Victoria,211,Melbourne - Outer East,21103,Maroondah,211031450,Croydon - East,1127,1019,866,17181,3012,17.5310
+Victoria,211,Melbourne - Outer East,21103,Maroondah,211031451,Croydon - West,830,890,867,14828,2587,17.4467
+Victoria,211,Melbourne - Outer East,21103,Maroondah,211031452,Croydon South,327,351,324,5140,1002,19.4942
+Victoria,211,Melbourne - Outer East,21104,Whitehorse - East,211041269,Forest Hill,484,650,618,11213,1752,15.6247
+Victoria,211,Melbourne - Outer East,21104,Whitehorse - East,211041270,Mitcham (Vic.),960,1036,982,17472,2978,17.0444
+Victoria,211,Melbourne - Outer East,21104,Whitehorse - East,211041271,Nunawading,685,747,756,13230,2188,16.5382
+Victoria,211,Melbourne - Outer East,21104,Whitehorse - East,211041272,Vermont,468,857,988,11353,2313,20.3735
+Victoria,211,Melbourne - Outer East,21104,Whitehorse - East,211041273,Vermont South,380,594,674,12275,1648,13.4257
+Victoria,211,Melbourne - Outer East,21105,Yarra Ranges,211051274,Belgrave - Selby,562,609,695,9991,1866,18.6768
+Victoria,211,Melbourne - Outer East,21105,Yarra Ranges,211051275,Chirnside Park,800,850,766,12506,2416,19.3187
+Victoria,211,Melbourne - Outer East,21105,Yarra Ranges,211051276,Healesville - Yarra Glen,749,814,833,14040,2396,17.0655
+Victoria,211,Melbourne - Outer East,21105,Yarra Ranges,211051277,Kilsyth,776,699,611,10676,2086,19.5392
+Victoria,211,Melbourne - Outer East,21105,Yarra Ranges,211051278,Lilydale - Coldstream,1207,1166,1178,20533,3551,17.2941
+Victoria,211,Melbourne - Outer East,21105,Yarra Ranges,211051279,Monbulk - Silvan,296,385,409,5834,1090,18.6836
+Victoria,211,Melbourne - Outer East,21105,Yarra Ranges,211051280,Montrose,424,481,477,6921,1382,19.9682
+Victoria,211,Melbourne - Outer East,21105,Yarra Ranges,211051281,Mooroolbark,1658,1574,1541,24258,4773,19.6760
+Victoria,211,Melbourne - Outer East,21105,Yarra Ranges,211051282,Mount Dandenong - Olinda,425,542,627,9609,1594,16.5886
+Victoria,211,Melbourne - Outer East,21105,Yarra Ranges,211051283,Mount Evelyn,683,733,633,10032,2049,20.4246
+Victoria,211,Melbourne - Outer East,21105,Yarra Ranges,211051284,Upwey - Tecoma,551,656,624,9862,1831,18.5662
+Victoria,211,Melbourne - Outer East,21105,Yarra Ranges,211051285,Wandin - Seville,480,505,507,7999,1492,18.6523
+Victoria,211,Melbourne - Outer East,21105,Yarra Ranges,211051286,Yarra Valley,1015,955,1050,17059,3020,17.7033
+Victoria,212,Melbourne - South East,21201,Cardinia,212011289,Emerald - Cockatoo,1096,1216,1392,18958,3704,19.5379
+Victoria,212,Melbourne - South East,21201,Cardinia,212011546,Beaconsfield - Officer,2373,2229,1914,28367,6516,22.9704
+Victoria,212,Melbourne - South East,21201,Cardinia,212011547,Bunyip - Garfield,598,622,745,10242,1965,19.1857
+Victoria,212,Melbourne - South East,21201,Cardinia,212011548,Koo Wee Rup,952,910,793,12009,2655,22.1084
+Victoria,212,Melbourne - South East,21201,Cardinia,212011549,Pakenham - North East,1412,1295,1066,16379,3773,23.0356
+Victoria,212,Melbourne - South East,21201,Cardinia,212011550,Pakenham - North West,876,872,718,9658,2466,25.5332
+Victoria,212,Melbourne - South East,21201,Cardinia,212011551,Pakenham - South East,449,438,329,6706,1216,18.1330
+Victoria,212,Melbourne - South East,21201,Cardinia,212011552,Pakenham - South West,2033,2293,2395,28217,6721,23.8190
+Victoria,212,Melbourne - South East,21202,Casey - North,212021293,Berwick - North,1200,1291,1430,23797,3921,16.4769
+Victoria,212,Melbourne - South East,21202,Casey - North,212021295,Doveton,967,793,702,12792,2462,19.2464
+Victoria,212,Melbourne - South East,21202,Casey - North,212021297,Hallam,772,840,770,11944,2382,19.9431
+Victoria,212,Melbourne - South East,21202,Casey - North,212021299,Narre Warren North,291,461,581,8184,1333,16.2879
+Victoria,212,Melbourne - South East,21202,Casey - North,212021453,Endeavour Hills - North,597,652,687,12150,1936,15.9342
+Victoria,212,Melbourne - South East,21202,Casey - North,212021454,Endeavour Hills - South,712,846,761,13594,2319,17.0590
+Victoria,212,Melbourne - South East,21202,Casey - North,212021455,Narre Warren - North East,832,842,893,13643,2567,18.8155
+Victoria,212,Melbourne - South East,21202,Casey - North,212021456,Narre Warren - South West,1074,968,904,15452,2946,19.0655
+Victoria,212,Melbourne - South East,21202,Casey - North,212021553,Berwick - South East,1099,1567,1857,20002,4523,22.6127
+Victoria,212,Melbourne - South East,21202,Casey - North,212021554,Berwick - South West,909,1041,1085,12791,3035,23.7276
+Victoria,212,Melbourne - South East,21203,Casey - South,212031300,Cranbourne,1553,1541,1320,22544,4414,19.5795
+Victoria,212,Melbourne - South East,21203,Casey - South,212031303,Cranbourne South,2433,2145,1644,24578,6222,25.3153
+Victoria,212,Melbourne - South East,21203,Casey - South,212031304,Cranbourne West,2256,2219,1951,24902,6426,25.8052
+Victoria,212,Melbourne - South East,21203,Casey - South,212031306,Lynbrook - Lyndhurst,1269,1597,1613,19435,4479,23.0461
+Victoria,212,Melbourne - South East,21203,Casey - South,212031308,Pearcedale - Tooradin,513,539,512,8253,1564,18.9507
+Victoria,212,Melbourne - South East,21203,Casey - South,212031457,Narre Warren South - East,596,822,1034,13030,2452,18.8181
+Victoria,212,Melbourne - South East,21203,Casey - South,212031458,Narre Warren South - West,1157,1223,1321,17141,3701,21.5915
+Victoria,212,Melbourne - South East,21203,Casey - South,212031555,Clyde North - North,1069,1296,1250,13155,3615,27.4800
+Victoria,212,Melbourne - South East,21203,Casey - South,212031556,Clyde North - South,2701,2512,1987,24609,7200,29.2576
+Victoria,212,Melbourne - South East,21203,Casey - South,212031557,Cranbourne East - North,1943,2231,2093,25149,6267,24.9195
+Victoria,212,Melbourne - South East,21203,Casey - South,212031558,Cranbourne East - South,1496,1416,1076,15112,3988,26.3896
+Victoria,212,Melbourne - South East,21203,Casey - South,212031559,Cranbourne North - East,1029,1275,1255,13678,3559,26.0199
+Victoria,212,Melbourne - South East,21203,Casey - South,212031560,Cranbourne North - West,837,906,886,12329,2629,21.3237
+Victoria,212,Melbourne - South East,21203,Casey - South,212031561,Hampton Park - East,951,972,918,13383,2841,21.2284
+Victoria,212,Melbourne - South East,21203,Casey - South,212031562,Hampton Park - West,953,895,933,13768,2781,20.1990
+Victoria,212,Melbourne - South East,21204,Dandenong,212041309,Clarinda - Oakleigh South,510,619,653,11752,1782,15.1634
+Victoria,212,Melbourne - South East,21204,Dandenong,212041310,Clayton South,804,659,589,15138,2052,13.5553
+Victoria,212,Melbourne - South East,21204,Dandenong,212041312,Dandenong North,1366,1347,1282,23300,3995,17.1459
+Victoria,212,Melbourne - South East,21204,Dandenong,212041313,Dingley Village,507,598,709,10754,1814,16.8681
+Victoria,212,Melbourne - South East,21204,Dandenong,212041316,Noble Park North,407,433,437,7651,1277,16.6906
+Victoria,212,Melbourne - South East,21204,Dandenong,212041317,Springvale,1173,1105,1028,24111,3306,13.7116
+Victoria,212,Melbourne - South East,21204,Dandenong,212041318,Springvale South,608,731,726,13139,2065,15.7166
+Victoria,212,Melbourne - South East,21204,Dandenong,212041459,Noble Park - East,852,694,511,13699,2057,15.0157
+Victoria,212,Melbourne - South East,21204,Dandenong,212041460,Noble Park - West,1110,1073,955,20330,3138,15.4353
+Victoria,212,Melbourne - South East,21204,Dandenong,212041563,Dandenong - North,1733,1382,1289,23067,4404,19.0922
+Victoria,212,Melbourne - South East,21204,Dandenong,212041564,Dandenong - South,732,702,716,10032,2150,21.4314
+Victoria,212,Melbourne - South East,21204,Dandenong,212041565,Keysborough - North,697,819,844,15095,2360,15.6343
+Victoria,212,Melbourne - South East,21204,Dandenong,212041566,Keysborough - South,1026,1249,1255,16874,3530,20.9198
+Victoria,212,Melbourne - South East,21205,Monash,212051319,Ashwood - Chadstone,1127,1061,1106,20947,3294,15.7254
+Victoria,212,Melbourne - South East,21205,Monash,212051321,Glen Waverley - East,749,1358,1723,22689,3830,16.8804
+Victoria,212,Melbourne - South East,21205,Monash,212051322,Glen Waverley - West,745,1325,1619,23202,3689,15.8995
+Victoria,212,Melbourne - South East,21205,Monash,212051323,Mount Waverley - North,688,936,1225,17214,2849,16.5505
+Victoria,212,Melbourne - South East,21205,Monash,212051324,Mount Waverley - South,845,1265,1321,20581,3431,16.6707
+Victoria,212,Melbourne - South East,21205,Monash,212051325,Mulgrave,1048,1200,1261,20981,3509,16.7247
+Victoria,212,Melbourne - South East,21205,Monash,212051326,Oakleigh - Huntingdale,1255,1251,1139,25104,3645,14.5196
+Victoria,212,Melbourne - South East,21205,Monash,212051327,Wheelers Hill,654,1081,1364,21285,3099,14.5595
+Victoria,212,Melbourne - South East,21205,Monash,212051567,Clayton (North) - Notting Hill,251,240,210,14143,701,4.9565
+Victoria,212,Melbourne - South East,21205,Monash,212051568,Clayton - Central,585,328,325,15034,1238,8.2347
+Victoria,213,Melbourne - West,21301,Brimbank,213011328,Ardeer - Albion,514,402,311,7908,1227,15.5159
+Victoria,213,Melbourne - West,21301,Brimbank,213011329,Cairnlea,462,590,702,10045,1754,17.4614
+Victoria,213,Melbourne - West,21301,Brimbank,213011331,Delahey,404,425,428,8008,1257,15.6968
+Victoria,213,Melbourne - West,21301,Brimbank,213011332,Keilor Downs,658,649,689,13068,1996,15.2740
+Victoria,213,Melbourne - West,21301,Brimbank,213011333,Kings Park (Vic.),762,770,870,13931,2402,17.2421
+Victoria,213,Melbourne - West,21301,Brimbank,213011334,St Albans - North,1139,1113,1042,21002,3294,15.6842
+Victoria,213,Melbourne - West,21301,Brimbank,213011335,St Albans - South,864,843,892,17764,2599,14.6307
+Victoria,213,Melbourne - West,21301,Brimbank,213011336,Sunshine,591,532,492,10104,1615,15.9838
+Victoria,213,Melbourne - West,21301,Brimbank,213011337,Sunshine North,692,638,645,12503,1975,15.7962
+Victoria,213,Melbourne - West,21301,Brimbank,213011338,Sunshine West,1063,1026,990,18790,3079,16.3864
+Victoria,213,Melbourne - West,21301,Brimbank,213011339,Sydenham,664,639,641,11972,1944,16.2379
+Victoria,213,Melbourne - West,21301,Brimbank,213011340,Taylors Lakes,678,770,866,16999,2314,13.6126
+Victoria,213,Melbourne - West,21301,Brimbank,213011569,Deer Park,1209,1204,1157,18447,3570,19.3527
+Victoria,213,Melbourne - West,21301,Brimbank,213011570,Derrimut,614,764,854,8913,2232,25.0421
+Victoria,213,Melbourne - West,21302,Hobsons Bay,213021341,Altona,776,871,828,14232,2475,17.3904
+Victoria,213,Melbourne - West,21302,Hobsons Bay,213021342,Altona Meadows,1078,1076,904,18793,3058,16.2720
+Victoria,213,Melbourne - West,21302,Hobsons Bay,213021343,Altona North,1204,1054,863,15914,3121,19.6117
+Victoria,213,Melbourne - West,21302,Hobsons Bay,213021344,Newport,1365,1365,1279,19943,4009,20.1023
+Victoria,213,Melbourne - West,21302,Hobsons Bay,213021345,Seabrook,300,405,323,4963,1028,20.7133
+Victoria,213,Melbourne - West,21302,Hobsons Bay,213021346,Williamstown,647,874,1172,16920,2693,15.9161
+Victoria,213,Melbourne - West,21303,Maribyrnong,213031347,Braybrook,1159,939,907,20699,3005,14.5176
+Victoria,213,Melbourne - West,21303,Maribyrnong,213031348,Footscray,907,634,565,20756,2106,10.1465
+Victoria,213,Melbourne - West,21303,Maribyrnong,213031349,Maribyrnong,607,497,522,13818,1626,11.7673
+Victoria,213,Melbourne - West,21303,Maribyrnong,213031350,Seddon - Kingsville,661,555,533,9782,1749,17.8798
+Victoria,213,Melbourne - West,21303,Maribyrnong,213031351,West Footscray - Tottenham,928,772,675,12953,2375,18.3355
+Victoria,213,Melbourne - West,21303,Maribyrnong,213031352,Yarraville,939,965,913,16243,2817,17.3429
+Victoria,213,Melbourne - West,21304,Melton - Bacchus Marsh,213041353,Bacchus Marsh,1811,1822,1836,26576,5469,20.5787
+Victoria,213,Melbourne - West,21304,Melton - Bacchus Marsh,213041358,Melton West,1783,1982,1859,22691,5624,24.7852
+Victoria,213,Melbourne - West,21304,Melton - Bacchus Marsh,213041359,Rockbank - Mount Cottrell,3399,2983,2034,31389,8416,26.8119
+Victoria,213,Melbourne - West,21304,Melton - Bacchus Marsh,213041360,Taylors Hill,983,1378,1899,19856,4260,21.4545
+Victoria,213,Melbourne - West,21304,Melton - Bacchus Marsh,213041461,Burnside,361,440,494,6449,1295,20.0806
+Victoria,213,Melbourne - West,21304,Melton - Bacchus Marsh,213041462,Burnside Heights,366,607,726,6499,1699,26.1425
+Victoria,213,Melbourne - West,21304,Melton - Bacchus Marsh,213041463,Caroline Springs,1154,1386,1668,21022,4208,20.0171
+Victoria,213,Melbourne - West,21304,Melton - Bacchus Marsh,213041571,Brookfield,864,932,827,10408,2623,25.2018
+Victoria,213,Melbourne - West,21304,Melton - Bacchus Marsh,213041572,Cobblebank - Strathtulloh,1499,1434,883,11760,3816,32.4490
+Victoria,213,Melbourne - West,21304,Melton - Bacchus Marsh,213041573,Eynesbury - Exford,349,384,355,3933,1088,27.6634
+Victoria,213,Melbourne - West,21304,Melton - Bacchus Marsh,213041574,Fraser Rise - Plumpton,2017,1828,1603,20730,5448,26.2808
+Victoria,213,Melbourne - West,21304,Melton - Bacchus Marsh,213041575,Hillside,852,887,1089,16120,2828,17.5434
+Victoria,213,Melbourne - West,21304,Melton - Bacchus Marsh,213041576,Kurunjang - Toolern Vale,891,895,908,12069,2694,22.3217
+Victoria,213,Melbourne - West,21304,Melton - Bacchus Marsh,213041577,Melton,478,465,510,8046,1453,18.0587
+Victoria,213,Melbourne - West,21304,Melton - Bacchus Marsh,213041578,Melton South - Weir Views,2158,2275,1828,21758,6261,28.7756
+Victoria,213,Melbourne - West,21305,Wyndham,213051361,Hoppers Crossing - North,1106,1134,1192,18410,3432,18.6420
+Victoria,213,Melbourne - West,21305,Wyndham,213051362,Hoppers Crossing - South,1069,1168,1286,18967,3523,18.5744
+Victoria,213,Melbourne - West,21305,Wyndham,213051363,Laverton,948,819,680,12754,2447,19.1861
+Victoria,213,Melbourne - West,21305,Wyndham,213051368,Werribee - South,1097,1128,1206,17937,3431,19.1281
+Victoria,213,Melbourne - West,21305,Wyndham,213051464,Point Cook - East,1635,1989,1959,21519,5583,25.9445
+Victoria,213,Melbourne - West,21305,Wyndham,213051466,Point Cook - South,1557,2359,2340,20596,6256,30.3748
+Victoria,213,Melbourne - West,21305,Wyndham,213051467,Werribee - East,1217,1153,1115,19124,3485,18.2232
+Victoria,213,Melbourne - West,21305,Wyndham,213051468,Werribee - West,2857,2544,1952,30552,7353,24.0672
+Victoria,213,Melbourne - West,21305,Wyndham,213051579,Manor Lakes - Quandong,1306,1341,1115,12575,3762,29.9165
+Victoria,213,Melbourne - West,21305,Wyndham,213051580,Point Cook - North East,765,996,1179,14817,2940,19.8421
+Victoria,213,Melbourne - West,21305,Wyndham,213051581,Point Cook - North West,720,815,894,10165,2429,23.8957
+Victoria,213,Melbourne - West,21305,Wyndham,213051582,Tarneit (West) - Mount Cottrell,2100,2048,1434,17173,5582,32.5045
+Victoria,213,Melbourne - West,21305,Wyndham,213051583,Tarneit - Central,2472,2690,2580,29462,7742,26.2779
+Victoria,213,Melbourne - West,21305,Wyndham,213051584,Tarneit - North,1713,1543,1077,13485,4333,32.1320
+Victoria,213,Melbourne - West,21305,Wyndham,213051585,Tarneit - South,982,1140,1010,11708,3132,26.7509
+Victoria,213,Melbourne - West,21305,Wyndham,213051586,Truganina - North,1552,1422,1103,14287,4077,28.5364
+Victoria,213,Melbourne - West,21305,Wyndham,213051587,Truganina - South East,1007,1115,858,10689,2980,27.8791
+Victoria,213,Melbourne - West,21305,Wyndham,213051588,Truganina - South West,1902,2059,1852,20356,5813,28.5567
+Victoria,213,Melbourne - West,21305,Wyndham,213051589,Wyndham Vale - North,1480,1308,913,13138,3701,28.1702
+Victoria,213,Melbourne - West,21305,Wyndham,213051590,Wyndham Vale - South,986,1188,1136,14163,3310,23.3708
