@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@6.2.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@6.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@7.0.2"></script>
+</head>
+<body>
+  <div id="vis"/>
+  <script>
+    const spec = {
+  "$schema": "https://vega.github.io/schema/vega/v6.json",
+  "title": {
+    "text": "Radar chart of Active UFC Champions",
+    "orient": "top",
+    "anchor": "start",
+    "frame": "group",
+    "fontSize": 18,
+    "fontWeight": "bold",
+    "dy": -100,
+    "dx": -165
+  },
+  "width": 700,
+  "height": 700,
+  "padding": 50,
+  "signals": [
+    {"name": "radius", "update": "width / 3"},
+    {
+      "name": "division_select",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "name": "Division",
+        "options": [
+          "All",
+          "Flyweight",
+          "Bantamweight",
+          "Featherweight",
+          "Lightweight",
+          "Welterweight",
+          "Middleweight",
+          "Light Heavyweight",
+          "Heavyweight",
+          "Women's Bantamweight",
+          "Women's Flyweight",
+          "Women's Strawweight"
+        ]
+      }
+    },
+    {
+      "name": "division_champ_map",
+      "value": {
+        "Flyweight": "ALEXANDRE PANTOJA",
+        "Bantamweight": "MERAB DVALISHVILI",
+        "Featherweight": "ALEXANDER VOLKANOVSKI",
+        "Lightweight": "ILIA TOPURIA",
+        "Welterweight": "JACK DELLA MADDALENA",
+        "Middleweight": "KHAMZAT CHIMAEV",
+        "Light Heavyweight": "ALEX PEREIRA",
+        "Heavyweight": "TOM ASPINALL",
+        "Women's Bantamweight": "KAYLA HARRISON",
+        "Women's Flyweight": "VALENTINA SHEVCHENKO",
+        "Women's Strawweight": "ZHANG WEILI"
+      }
+    },
+    {
+      "name": "cb_0",
+      "value": false,
+      "bind": {"input": "checkbox", "name": "ALEXANDRE PANTOJA"}
+    },
+    {
+      "name": "cb_1",
+      "value": false,
+      "bind": {"input": "checkbox", "name": "MERAB DVALISHVILI"}
+    },
+    {
+      "name": "cb_2",
+      "value": false,
+      "bind": {"input": "checkbox", "name": "ALEXANDER VOLKANOVSKI"}
+    },
+    {
+      "name": "cb_3",
+      "value": false,
+      "bind": {"input": "checkbox", "name": "ILIA TOPURIA"}
+    },
+    {
+      "name": "cb_4",
+      "value": false,
+      "bind": {"input": "checkbox", "name": "JACK DELLA MADDALENA"}
+    },
+    {
+      "name": "cb_5",
+      "value": false,
+      "bind": {"input": "checkbox", "name": "KHAMZAT CHIMAEV"}
+    },
+    {
+      "name": "cb_6",
+      "value": false,
+      "bind": {"input": "checkbox", "name": "ALEX PEREIRA"}
+    },
+    {
+      "name": "cb_7",
+      "value": false,
+      "bind": {"input": "checkbox", "name": "TOM ASPINALL"}
+    },
+    {
+      "name": "cb_8",
+      "value": false,
+      "bind": {"input": "checkbox", "name": "KAYLA HARRISON"}
+    },
+    {
+      "name": "cb_9",
+      "value": false,
+      "bind": {"input": "checkbox", "name": "VALENTINA SHEVCHENKO"}
+    },
+    {
+      "name": "cb_10",
+      "value": false,
+      "bind": {"input": "checkbox", "name": "ZHANG WEILI"}
+    }
+  ],
+  "data": [
+    {
+      "name": "raw",
+      "url": "https://raw.githubusercontent.com/JustinYung1214/3179/refs/heads/Week10_homework/ActiveChampion.csv",
+      "format": {"type": "csv"}
+    },
+    {
+      "name": "table",
+      "source": "raw",
+      "transform": [
+        {
+          "type": "fold",
+          "fields": [
+            "Striking accuracy_pct",
+            "Striking defense_pct",
+            "Striking volume_pct",
+            "Takedown accuracy_pct",
+            "Takedown defense_pct",
+            "Takedown volume_pct",
+            "Submission threat_pct",
+            "Knockout power_pct"
+          ],
+          "as": ["key", "value"]
+        },
+        {
+          "type": "formula",
+          "expr": "datum.key==='Striking accuracy_pct' ? 'Striking accuracy' : datum.key==='Striking defense_pct' ? 'Striking defense' : datum.key==='Takedown accuracy_pct'? 'Takedown accuracy': datum.key==='Takedown defense_pct' ? 'Takedown defense' : datum.key==='Submission threat_pct' ? 'Submission threat' : datum.key==='Knockout power_pct' ? 'Knockout power' : datum.key==='Striking volume_pct' ? 'Striking volume' : datum.key==='Takedown volume_pct' ? 'Takedown volume' : datum.key",
+          "as": "label"
+        },
+        {
+          "type": "formula",
+          "expr": "datum.fighter_name || datum.name || datum.fighter",
+          "as": "category"
+        },
+        {
+          "type": "filter",
+          "expr": "(((cb_0 && datum.fighter_name == \"ALEXANDRE PANTOJA\") || (cb_1 && datum.fighter_name == \"MERAB DVALISHVILI\") || (cb_2 && datum.fighter_name == \"ALEXANDER VOLKANOVSKI\") || (cb_3 && datum.fighter_name == \"ILIA TOPURIA\") || (cb_4 && datum.fighter_name == \"JACK DELLA MADDALENA\") || (cb_5 && datum.fighter_name == \"KHAMZAT CHIMAEV\") || (cb_6 && datum.fighter_name == \"ALEX PEREIRA\") || (cb_7 && datum.fighter_name == \"TOM ASPINALL\") || (cb_8 && datum.fighter_name == \"KAYLA HARRISON\") || (cb_9 && datum.fighter_name == \"VALENTINA SHEVCHENKO\") || (cb_10 && datum.fighter_name == \"ZHANG WEILI\")) || (!(cb_0 || cb_1 || cb_2 || cb_3 || cb_4 || cb_5 || cb_6 || cb_7 || cb_8 || cb_9 || cb_10) && (division_select == 'All' || datum.fighter_name == division_champ_map[division_select])))"
+        },
+        {
+          "type": "formula",
+          "expr": "parseFloat(replace(datum.value, /%$/, '')) / (test(datum.value, /%$/) ? 100 : 1)",
+          "as": "value_num"
+        }
+      ]
+    },
+    {
+      "name": "keys",
+      "source": "table",
+      "transform": [{"type": "aggregate", "groupby": ["label"]}]
+    },
+    {
+      "name": "fighters",
+      "source": "raw",
+      "transform": [
+        {"type": "aggregate", "groupby": ["fighter_name", "division"]}
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "angular",
+      "type": "point",
+      "range": {"signal": "[-PI, PI]"},
+      "padding": 0.5,
+      "domain": {"data": "keys", "field": "label"}
+    },
+    {
+      "name": "radial",
+      "type": "linear",
+      "range": {"signal": "[0, radius]"},
+      "domain": {"data": "table", "field": "value_num"},
+      "domainMin": 0
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": {"data": "fighters", "field": "fighter_name"},
+      "range": {"scheme": "category10"}
+    }
+  ],
+  "encode": {"enter": {"x": {"signal": "radius"}, "y": {"signal": "radius"}}},
+  "marks": [
+    {
+      "type": "group",
+      "from": {
+        "facet": {"name": "facet", "data": "table", "groupby": ["category"]}
+      },
+      "marks": [
+        {
+          "name": "polygon",
+          "type": "line",
+          "from": {"data": "facet"},
+          "encode": {
+            "enter": {
+              "interpolate": {"value": "linear-closed"},
+              "x": {
+                "signal": "scale('radial', datum.value_num) * cos(scale('angular', datum.label))"
+              },
+              "y": {
+                "signal": "scale('radial', datum.value_num) * sin(scale('angular', datum.label))"
+              },
+              "stroke": {"scale": "color", "field": "category"},
+              "strokeWidth": {"value": 2},
+              "fill": {"scale": "color", "field": "category"},
+              "fillOpacity": {"value": 0.14},
+              "tooltip": {
+                "signal": "{'Fighter': datum.category, 'Division': datum.division, 'Metric': datum.label, 'Value': datum.value}"
+              }
+            },
+            "hover": {
+              "strokeWidth": {"value": 4},
+              "fillOpacity": {"value": 0.32}
+            }
+          }
+        },
+        {
+          "type": "symbol",
+          "from": {"data": "facet"},
+          "encode": {
+            "enter": {
+              "x": {
+                "signal": "scale('radial', datum.value_num) * cos(scale('angular', datum.label))"
+              },
+              "y": {
+                "signal": "scale('radial', datum.value_num) * sin(scale('angular', datum.label))"
+              },
+              "size": {"value": 60},
+              "fill": {"scale": "color", "field": "category"},
+              "stroke": {"value": "white"},
+              "strokeWidth": {"value": 1},
+              "tooltip": {
+                "signal": "{'Fighter': datum.category, 'Division': datum.division, 'Metric': datum.label, 'Value': datum.value}"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "name": "radial-grid",
+      "from": {"data": "keys"},
+      "encode": {
+        "enter": {
+          "x": {"value": 0},
+          "y": {"value": 0},
+          "x2": {"signal": "radius * cos(scale('angular', datum.label))"},
+          "y2": {"signal": "radius * sin(scale('angular', datum.label))"},
+          "stroke": {"value": "#ddd"},
+          "strokeWidth": {"value": 1}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {"data": "keys"},
+      "encode": {
+        "enter": {
+          "text": {"field": "label"},
+          "x": {"signal": "(radius + 12) * cos(scale('angular', datum.label))"},
+          "y": {"signal": "(radius + 12) * sin(scale('angular', datum.label))"},
+          "align": {
+            "signal": "if(cos(scale('angular', datum.label)) > 0, 'left', 'right')"
+          },
+          "baseline": {
+            "signal": "if(sin(scale('angular', datum.label)) > 0.1, 'bottom', if(sin(scale('angular', datum.label)) < -0.1, 'top', 'middle'))"
+          },
+          "fontSize": {"value": 12}
+        }
+      }
+    },
+    {
+      "type": "line",
+      "name": "outer-line",
+      "from": {"data": "radial-grid"},
+      "encode": {
+        "enter": {
+          "interpolate": {"value": "linear-closed"},
+          "x": {"field": "x2"},
+          "y": {"field": "y2"},
+          "stroke": {"value": "lightgray"},
+          "strokeWidth": {"value": 1}
+        }
+      }
+    }
+  ],
+  "config": {}
+};
+    vegaEmbed("#vis", spec, {mode: "vega"}).then(console.log).catch(console.warn);
+  </script>
+</body>
+</html>
