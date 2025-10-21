@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>FIT 3179 A2 — Combined Maps & Radar + Side Panel</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" crossorigin="anonymous">
+
+  <!-- Vega / Vega-Lite / Vega-Embed (shared by all specs) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@6.2.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@6.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@7.0.2"></script>
+
+  <style>
+    /* PAGE + TYPOGRAPHY */
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 18px;
+      background: #E6E6FA; /* lavender page background */
+      color: #222;
+      line-height: 1.45;
+    }
+
+    a { color: #0b66ff; }
+
+    /* --- MAPS layout --- */
+    .maps-row {
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+    .map-col {
+      flex: 1 1 480px;
+      min-width: 320px;
+      box-sizing: border-box;
+    }
+
+    /* --- RADAR + SIDE PANEL layout --- */
+    .main-row {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .left-col {
+      flex: 1 1 640px;
+      min-width: 320px;
+    }
+    .right-col {
+      width: 360px;
+      min-width: 260px;
+      box-sizing: border-box;
+    }
+
+    /* shared viz sizing - DO NOT override vega colors */
+    .viz {
+      width: 100%;
+      height: 480px;
+      margin-bottom: 12px;
+      background: transparent; /* ensure charts keep their internal colours */
+    }
+    .small-viz {
+      width: 100%;
+      height: 220px;
+      margin-bottom: 12px;
+      background: transparent;
+    }
+
+    /* IMAGE PLACEHOLDER */
+    #fighter-img {
+      display: block;
+      width: 70%;
+      aspect-ratio: 3 / 4;
+      height: auto;
+      margin: 0 auto;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      background: #f3f3f3 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="533"><rect width="100%" height="100%" fill="%23f3f3f3"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="%23bbb" font-size="18">Image not available</text></svg>') center/contain no-repeat;
+    }
+
+    /* TEXTBOXES (light grey as requested) */
+    .textbox, #fighter-controls, .fighter-info, .controls-section {
+      background: #f0f0f0; /* light grey */
+      border-radius: 6px;
+      padding: 8px 10px;
+      box-sizing: border-box;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .fighter-info {
+      padding: 10px;
+      font-size: 14px;
+    }
+    .fighter-info h2 { margin: 4px 0; font-size: 18px; }
+    .fighter-info p { margin: 2px 0; color: #333; }
+
+    /* fighter-controls specifics */
+    #fighter-controls {
+      margin-top: 8px;
+      max-height: 300px;
+      width : 100%;
+      overflow-y: auto;
+      padding: 8px;
+    }
+    .control-item { display:flex; align-items:center; gap:8px; padding: 4px 2px; }
+    .control-item input { transform: scale(1.02); }
+
+    /* headings are left untouched but slightly spaced */
+    h1, h2, h3 { color: #1a1a1a; margin-top: 10px; }
+
+    /* footer / sources styling (baby-blue background and small font) */
+    footer.sources {
+      margin-top: 28px;
+      background: f0f0f0; /* baby blue */
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 12px; /* small like the example */
+      color: #222;
+      line-height: 1.3;
+    }
+    footer.sources p { margin: 6px 0; }
+
+    /* responsive tweaks */
+    @media (max-width: 980px) {
+      .maps-row, .main-row { flex-direction: column; }
+      .right-col { width: 100%; }
+      .viz { height: 420px; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Breakdown of Nationality of UFC fighters and Deepdive into the style of how each champion fights</h1>
+  <p class="textbox">Mixed Martial Arts has surged over the past two decades, becoming a global phenomenon. The UFC, as the sport’s premier organization, now features athletes drawn from every continent. The two choropleth maps below reveal this international footprint: one displays the raw count of active fighters per country, while the other normalizes that count by national population—fighters per one million residents. Comparing both maps highlights not only which countries supply the most fighters overall but also which nations punch above their weight relative to population size. Together, these maps offer a clearer picture of MMA’s worldwide talent pipelines and surprising hotspots.</p>
+
+  <!-- ========== MAPS SECTION ========== -->
+  <section aria-label="Maps">
+    <h2>Nationality Breakdown of UFC’s Active Roster</h2>
+    <div class="maps-row">
+      <div class="map-col">
+        <div id="map1" class="viz"></div>
+      </div>
+
+      <div class="map-col">
+        <div id="map2" class="viz"></div>
+      </div>
+    </div>
+  </section>
+
+   <h3>Traditional Powers</h3>
+    <p class="textbox">Brazil and the United States produce many UFC fighters because of culture, infrastructure, and opportunity. Brazil’s legacy of Brazilian jiu-jitsu and vale tudo, and the U.S.’s wrestling and boxing systems, create clear entry paths. Large populations and dense gym networks supply talent and competitive amateur circuits. Media exposure and famous champions make MMA aspirational, while economic incentives attract determined athletes. Established fight camps, promoters, and regulatory frameworks help careers advance. Cross-training and international exchanges spread techniques and raise standards. Together, these social, economic, and institutional factors create deep pools of elite mixed martial artists. And global fan interest fuels growth.</p>
+
+    <h3>Most Impressive</h3>
+    <p class="textbox">Perhaps the most impressive country is Georgia: with only 3.67 million people it produced four UFC fighters, two of whom are current champions — Merab Dvalishvili (bantamweight) and Ilia Topuria (lightweight). That yields an extraordinary 10.89 fighters per million residents, a striking per-capita dominance. Georgia’s deep wrestling heritage, rigorous regional gyms, and a culture that prizes combat sports create efficient talent pathways. Many athletes also train abroad at elite camps, amplifying skills and exposure. For a small nation, a few high-achievers create outsized international visibility and inspire the next generation of fighters. Local heroes' success motivates youth nationwide every year.</p>
+
+    <h3> Australia</h3>
+    <p class="textbox">Australia has steadily increased its UFC presence, now boasting 20 active fighters within a population of 27.2 million — about 7.35 fighters per million. High-profile champions such as Alexander Volkanovski, a two-time featherweight titleholder, and Jack Della Maddalena, the new welterweight champion, have amplified national interest and created a strong performance pipeline. Australia’s robust sporting culture, widespread combat gyms, and supportive coaching networks nurture talent from grassroots to elite levels. Frequent international training exchanges and successful domestic promotions give fighters exposure and experience. As champions inspire younger athletes, Australia’s per-capita representation in the UFC is likely to keep growing further.</p>
+
+  <!-- ========== RADAR + PANEL SECTION ========== -->
+  <section aria-label="Radar and details" style="margin-top:20px;">
+    <h2>Charts about Active UFC Champions</h2>
+    <p class="textbox">The radar chart converted the champion's stats with fighters among his/her division to a percentile. (i.e. if the fighter has a 99 striking_accuracy_pct, he’s better than 99% fighter in his/her division in the striking department in terms of accuracy.)</p>
+
+    <div class="main-row">
+      <div class="left-col">
+        <div id="radar" class="viz"></div>
+
+        <div>
+          <strong>Select a fighter</strong>
+          <div id="fighter-controls" aria-label="Fighter selection controls" class="textbox">
+            <!-- radios populated by JS -->
+            Loading fighters...
+          </div>
+        </div>
+      </div>
+
+      <div class="right-col">
+        <div id="pie" class="small-viz"></div>
+        <p class="textbox" style="margin-top:6px;">The pie chart shows the preferred target to strike for every champion.</p>
+        <div id="bar" class="small-viz"></div>
+        <p class="textbox" style="margin-top:6px;">The bar chart shows the preferred method of victory for every champion.</p>
+
+        <div style="margin-top:8px;">
+          <img id="fighter-img" src="" alt="Fighter picture (if available)">
+        </div>
+
+        <div class="fighter-info textbox" id="fighter-info">
+          <h2 id="fighter-name">—</h2>
+          <p id="fighter-record">Record: —</p>
+          <p id="fighter-division">Division: —</p>
+          <p id="fighter-profile-link"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MAPS & CHART SCRIPTS unchanged (charts keep their colour encodings) ========== -->
+  <!-- Paste your existing script blocks exactly as they were — no modification to vega specs or scales. -->
+  <!-- MAPS -->
+  <script>
+    // (Map & other scripts are unchanged from your original file so vega colour scales remain intact.)
+    // MAP 1
+    const specMap1 = {
+      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+      "title": "Nationality Breakdown of UFC’s Active Roster (absolute number of fighters)",
+      "autosize": {"type": "fit", "contains": "padding"},
+      "width": "container",
+      "height": 480,
+      "projection": {"type": "equalEarth"},
+      "data": {
+        "url": "https://raw.githubusercontent.com/JustinYung1214/3179/refs/heads/A2-ufc/ne_110m.json",
+        "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+      },
+      "transform": [
+        {
+          "lookup": "properties.NAME",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/JustinYung1214/3179/refs/heads/A2-ufc/debuted_fighters_countries_country_total.csv",
+              "format": {"type": "csv"}
+            },
+            "key": "Country",
+            "fields": ["Total", "Country"]
+          }
+        }
+      ],
+      "layer": [
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/JustinYung1214/3179/refs/heads/A2-ufc/ne_110m.json",
+            "format": {"type": "json", "feature": "ne_110m_ocean"}
+          },
+          "mark": {"type": "geoshape", "fill": "#4f74da"}
+        },
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/JustinYung1214/3179/refs/heads/A2-ufc/ne_110m.json",
+            "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": null,
+            "stroke": "#8c8c8c",
+            "strokeWidth": 0.4,
+            "opacity": 0.5
+          }
+        },
+        {
+          "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.6},
+          "encoding": {
+            "color": {
+              "field": "Total",
+              "type": "quantitative",
+              "title": "Number of UFC fighters",
+              "scale": {
+                "type": "threshold",
+                "domain": [1, 5, 10, 15, 30],
+                "range": [
+                  "#cccccc",
+                  "#ccece6",
+                  "#99d8c9",
+                  "#66c2a4",
+                  "#2ca25f",
+                  "#006d2c"
+                ]
+              }
+            },
+            "tooltip": [
+              {"field": "properties.NAME", "type": "nominal", "title": "Country"},
+              {"field": "Total", "type": "quantitative", "title": "Total fighters"}
+            ]
+          }
+        }
+      ]
+    };
+
+    vegaEmbed("#map1", specMap1, {mode: "vega-lite", renderer: "canvas"}).catch(console.warn);
+
+    // MAP 2 (unchanged)
+    const specMap2 = {
+      "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+      "title": "Nationality Breakdown of UFC’s Active Roster (normalised view)",
+      "autosize": {"type": "fit", "contains": "padding"},
+      "width": "container",
+      "height": 480,
+      "projection": {"type": "equalEarth"},
+      "data": {
+        "url": "https://raw.githubusercontent.com/JustinYung1214/3179/refs/heads/A2-ufc/ne_110m.json",
+        "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+      },
+      "transform": [
+        {
+          "lookup": "properties.NAME",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/JustinYung1214/3179/refs/heads/A2-ufc/debuted_fighters_countries_country_total.csv",
+              "format": {"type": "csv"}
+            },
+            "key": "Country",
+            "fields": ["Total", "Country"]
+          }
+        },
+        {
+          "lookup": "properties.ISO_A3_EH",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/JustinYung1214/3179/refs/heads/A2-ufc/world%20population%202025.csv",
+              "format": {"type": "csv"}
+            },
+            "key": "Country Code",
+            "fields": ["Population"]
+          }
+        },
+        {
+          "calculate": "datum.Population == null || datum.Population == 0 ? 0 : (datum.Total /datum.Population) *10000000",
+          "as": "fighters_per_1_million"
+        }
+      ],
+      "layer": [
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/JustinYung1214/3179/refs/heads/A2-ufc/ne_110m.json",
+            "format": {"type": "json", "feature": "ne_110m_ocean"}
+          },
+          "mark": {"type": "geoshape", "fill": "#4f74da"}
+        },
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/JustinYung1214/3179/refs/heads/A2-ufc/ne_110m.json",
+            "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": null,
+            "stroke": "#8c8c8c",
+            "strokeWidth": 0.4,
+            "opacity": 0.5
+          }
+        },
+        {
+          "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.6},
+          "encoding": {
+            "color": {
+              "field": "fighters_per_1_million",
+              "type": "quantitative",
+              "title": "Fighters Per 1,000,000 Population",
+              "scale": {
+                "type": "threshold",
+                "domain": [0.1, 0.5, 1.0, 2.0, 4.0],
+                "range": [
+                  "#cccccc",
+                  "#c6dbef",
+                  "#9ecae1",
+                  "#6baed6",
+                  "#3182bd",
+                  "#08519c"
+                ]
+              }
+            },
+            "tooltip": [
+              {"field": "properties.NAME", "type": "nominal", "title": "Country"},
+              {"field": "Total", "type": "quantitative", "title": "Total fighters"},
+              {"field": "Population", "type": "quantitative", "title": "Total Population"},
+              {"field": "fighters_per_1_million", "type": "quantitative", "title": "Count of Fighters Per million", "format": ".2f"}
+            ]
+          }
+        }
+      ]
+    };
+
+    vegaEmbed("#map2", specMap2, {mode: "vega-lite", renderer: "canvas"}).catch(console.warn);
+  </script>
+
+  <!-- ========== RADAR + PIE + BAR SCRIPTS ========== -->
+  <script>
+    // CSV used by radar / pie / bar
+    const CSV_URL = "https://raw.githubusercontent.com/JustinYung1214/3179/refs/heads/Week10_homework/ActiveChampion.csv";
+
+    /***********
+     * RADAR (Vega spec)
+     ***********/
+    const specRadar = {
+      "$schema": "https://vega.github.io/schema/vega/v6.json",
+      "width": 700,
+      "height": 700,
+      "signals": [
+        {"name": "radius", "update": "width / 3"},
+        {"name": "division_select", "value": "All"},
+        {"name": "division_champ_map", "value": {
+            "Flyweight": "ALEXANDRE PANTOJA",
+            "Bantamweight": "MERAB DVALISHVILI",
+            "Featherweight": "ALEXANDER VOLKANOVSKI",
+            "Lightweight": "ILIA TOPURIA",
+            "Welterweight": "JACK DELLA MADDALENA",
+            "Middleweight": "KHAMZAT CHIMAEV",
+            "Light Heavyweight": "ALEX PEREIRA",
+            "Heavyweight": "TOM ASPINALL",
+            "Women's Bantamweight": "KAYLA HARRISON",
+            "Women's Flyweight": "VALENTINA SHEVCHENKO",
+            "Women's Strawweight": "ZHANG WEILI"
+          }},
+        {"name":"selected_fighter","value":"ILIA TOPURIA"}
+      ],
+      "data": [
+        {
+          "name": "raw",
+          "url": CSV_URL,
+          "format": {"type": "csv"}
+        },
+        {
+          "name": "table",
+          "source": "raw",
+          "transform": [
+            {
+              "type": "fold",
+              "fields": [
+                "Striking accuracy_pct",
+                "Striking defense_pct",
+                "Striking volume_pct",
+                "Takedown accuracy_pct",
+                "Takedown defense_pct",
+                "Takedown volume_pct",
+                "Submission threat_pct",
+                "Knockout power_pct"
+              ],
+              "as": ["key", "value"]
+            },
+            {
+              "type": "formula",
+              "expr": "datum.key==='Striking accuracy_pct' ? 'Striking accuracy' : datum.key==='Striking defense_pct' ? 'Striking defense' : datum.key==='Takedown accuracy_pct'? 'Takedown accuracy': datum.key==='Takedown defense_pct' ? 'Takedown defense' : datum.key==='Submission threat_pct' ? 'Submission threat' : datum.key==='Knockout power_pct' ? 'Knockout power' : datum.key==='Striking volume_pct' ? 'Striking volume' : datum.key==='Takedown volume_pct' ? 'Takedown volume' : datum.key",
+              "as": "label"
+            },
+            {
+              "type": "formula",
+              "expr": "datum.fighter_name || datum.name || datum.fighter",
+              "as": "category"
+            },
+            {
+              "type": "filter",
+              "expr": "(selected_fighter == null || selected_fighter == '' || datum.fighter_name == selected_fighter) && (division_select == 'All' || datum.fighter_name == division_champ_map[division_select])"
+            },
+            {
+              "type": "formula",
+              "expr": "parseFloat(replace(datum.value, /%$/, '')) / (test(datum.value, /%$/) ? 100 : 1)",
+              "as": "value_num"
+            }
+          ]
+        },
+        {
+          "name": "keys",
+          "source": "table",
+          "transform": [{"type": "aggregate", "groupby": ["label"]}]
+        },
+        {
+          "name": "fighters",
+          "source": "raw",
+          "transform": [{"type":"aggregate","groupby":["fighter_name","division","fight_record","source_url","win_ko_count","win_ko_pct","win_dec_count","win_dec_pct","win_sub_count","win_sub_pct","sig_str_target_head_count","sig_str_target_head_pct","sig_str_target_body_count","sig_str_target_body_pct","sig_str_target_leg_count","sig_str_target_leg_pct"]}]
+        }
+      ],
+      "scales": [
+        { "name": "angular", "type": "point", "range": {"signal": "[-PI, PI]"}, "padding": 0.5, "domain": {"data": "keys", "field": "label"} },
+        { "name": "radial", "type": "linear", "range": {"signal": "[0, radius]"}, "domain": {"data": "table", "field": "value_num"}, "domainMin": 0 },
+        { "name": "color", "type": "ordinal", "domain": {"data": "fighters", "field": "fighter_name"}, "range": {"scheme": "category10"} }
+      ],
+      "encode": {"enter": {"x": {"signal": "radius"}, "y": {"signal": "radius"}}},
+      "marks": [
+        {
+          "type": "group",
+          "from": {"facet": {"name": "facet", "data": "table", "groupby": ["category"]}},
+          "marks": [
+            {
+              "name": "polygon",
+              "type": "line",
+              "from": {"data": "facet"},
+              "encode": {
+                "enter": {
+                  "interpolate": {"value": "linear-closed"},
+                  "x": {"signal": "scale('radial', datum.value_num) * cos(scale('angular', datum.label))"},
+                  "y": {"signal": "scale('radial', datum.value_num) * sin(scale('angular', datum.label))"},
+                  "stroke": {"scale": "color", "field": "category"},
+                  "strokeWidth": {"value": 2},
+                  "fill": {"scale": "color", "field": "category"},
+                  "fillOpacity": {"value": 0.14},
+                  "tooltip": {"signal": "{'Fighter': datum.category, 'Division': datum.division, 'Metric': datum.label, 'Value': datum.value}"}
+                },
+                "hover": {"strokeWidth": {"value": 4}, "fillOpacity": {"value": 0.32}}
+              }
+            },
+            {
+              "type": "symbol",
+              "from": {"data": "facet"},
+              "encode": {
+                "enter": {
+                  "x": {"signal": "scale('radial', datum.value_num) * cos(scale('angular', datum.label))"},
+                  "y": {"signal": "scale('radial', datum.value_num) * sin(scale('angular', datum.label))"},
+                  "size": {"value": 60},
+                  "fill": {"scale": "color", "field": "category"},
+                  "stroke": {"value": "white"},
+                  "strokeWidth": {"value": 1},
+                  "tooltip": {"signal": "{'Fighter': datum.category, 'Division': datum.division, 'Metric': datum.label, 'Value': datum.value}"}
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "rule",
+          "name": "radial-grid",
+          "from": {"data": "keys"},
+          "encode": {
+            "enter": {
+              "x": {"value": 0},
+              "y": {"value": 0},
+              "x2": {"signal": "radius * cos(scale('angular', datum.label))"},
+              "y2": {"signal": "radius * sin(scale('angular', datum.label))"},
+              "stroke": {"value": "#ddd"},
+              "strokeWidth": {"value": 1}
+            }
+          }
+        },
+        {
+          "type": "text",
+          "from": {"data": "keys"},
+          "encode": {
+            "enter": {
+              "text": {"field": "label"},
+              "x": {"signal": "(radius + 12) * cos(scale('angular', datum.label))"},
+              "y": {"signal": "(radius + 12) * sin(scale('angular', datum.label))"},
+              "align": {"signal": "if(cos(scale('angular', datum.label)) > 0, 'left', 'right')"},
+              "baseline": {"signal": "if(sin(scale('angular', datum.label)) > 0.1, 'bottom', if(sin(scale('angular', datum.label)) < -0.1, 'top', 'middle'))"},
+              "fontSize": {"value": 12}
+            }
+          }
+        },
+        {
+          "type": "line",
+          "name": "outer-line",
+          "from": {"data": "radial-grid"},
+          "encode": {
+            "enter": {
+              "interpolate": {"value": "linear-closed"},
+              "x": {"field": "x2"},
+              "y": {"field": "y2"},
+              "stroke": {"value": "lightgray"},
+              "strokeWidth": {"value": 1}
+            }
+          }
+        }
+      ]
+    };
+
+    // PIE & BAR (Vega-Lite) — single fighter control via radio.
+    const pieSpec = {
+      "$schema":"https://vega.github.io/schema/vega-lite/v5.json",
+      "title":"Significant Strike Targets by Selected Champion (Head / Body / Leg)",
+      "params": [
+        {"name":"selected_fighters","value":["ILIA TOPURIA"]}
+      ],
+      "data":{"url": CSV_URL, "format":{"type":"csv"}},
+      "transform":[
+        {"filter":"indexof(selected_fighters, datum.fighter_name) >= 0"},
+        {"fold":["sig_str_target_head_count","sig_str_target_body_count","sig_str_target_leg_count"], "as":["part","value"]},
+        {"calculate":"toNumber(datum.value)","as":"value_num"},
+        {"aggregate":[{"op":"sum","field":"value_num","as":"value_sum"}],"groupby":["part"]},
+        {"joinaggregate":[{"op":"sum","field":"value_sum","as":"total"}]},
+        {
+          "calculate":
+            "datum.part === 'sig_str_target_head_count' ? 'Head' : " +
+            "datum.part === 'sig_str_target_body_count' ? 'Body' : " +
+            "'Leg'",
+          "as": "part_label"
+        },
+        {"calculate":"datum.value_sum / datum.total","as":"pct"}
+      ],
+      "mark":{"type":"arc","innerRadius":40},
+      "encoding":{
+        "theta":{"field":"value_sum","type":"quantitative"},
+        "color":{"field":"part_label","type":"nominal","legend":{"title":"Target"}, "scale": {"range":["#f1a340","#f7f7f7","#998ec3"]}},
+        "tooltip":[
+          {"field":"part_label","type":"nominal","title":"Part"},
+          {"field":"value_sum","type":"quantitative","title":"Count"},
+          {"field":"pct","type":"quantitative","title":"Percent","format":".1%"}
+        ]
+      }
+    };
+
+    const barSpec = {
+      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+      "params": [
+        {"name":"selected_fighters","value":["ILIA TOPURIA"]}
+      ],
+      "title": "Win methods by selected champion(s) (KO / Dec / Sub)",
+      "width": 340,
+      "height": 220,
+      "data": {"url": CSV_URL, "format": {"type": "csv"}},
+      "transform": [
+        {"filter":"indexof(selected_fighters, datum.fighter_name) >= 0"},
+        {"fold": ["win_ko_count","win_dec_count","win_sub_count"], "as": ["method","value"]},
+        {"calculate": "toNumber(datum.value)", "as": "value_num"},
+        {"aggregate": [{"op": "sum", "field": "value_num", "as": "value_sum"}], "groupby": ["method"]},
+        {"joinaggregate": [{"op": "sum", "field": "value_sum", "as": "total"}]},
+        {
+          "calculate":
+            "datum.method === 'win_ko_count' ? 'Knockout' : " +
+            "datum.method === 'win_dec_count' ? 'Judges Decision' : " +
+            "'Submission'",
+          "as": "method_label"
+        },
+        {"calculate": "datum.value_sum / datum.total", "as": "percent"}
+      ],
+      "mark": {"type": "bar", "tooltip": true},
+      "encoding": {
+        "x": {"field": "method_label", "type": "nominal", "axis": {"labelAngle": 0, "title": "Method of Winning"}, "sort": ["Knockout","Judges Decision","Submission"]},
+        "y": {"field": "value_sum", "type": "quantitative", "title": "Count"},
+        "color": {"field": "method_label", "type": "nominal", "legend": {"title": "Method"}},
+        "tooltip": [
+          {"field": "method_label", "type": "nominal", "title": "Method"},
+          {"field": "value_sum", "type": "quantitative", "title": "Count"},
+          {"field": "percent", "type": "quantitative", "title": "Percent", "format": ".1%"}
+        ]
+      }
+    };
+
+    // store embed view references
+    let radarEmbed, pieEmbed, barEmbed;
+
+    // embed radar, then create radio controls using its derived fighter list
+    vegaEmbed("#radar", specRadar, {mode: "vega"}).then(res => {
+      radarEmbed = res;
+      const view = res.view;
+
+      // embed pie and bar specs (they will be updated via signals)
+      vegaEmbed("#pie", pieSpec, {mode: "vega-lite"}).then(r => { pieEmbed = r; });
+      vegaEmbed("#bar", barSpec, {mode: "vega-lite"}).then(r => { barEmbed = r; });
+
+      // wait a tick to ensure data loaded, then read fighters data
+      view.runAsync().then(() => {
+        const raw = view.data("raw") || [];
+        const fighters = raw
+          .map(d => ({ fighter_name: (d.fighter_name || d.fighter || d.name || "").toString().trim(), division: (d.division||"").trim(), fight_record: (d.fight_record||"").trim(), source_url: (d.source_url||"").trim() }))
+          .filter(d => d.fighter_name)
+          .reduce((acc, curr) => {
+            if (!acc.some(x => x.fighter_name === curr.fighter_name)) acc.push(curr);
+            return acc;
+          }, []);
+
+        const controlsContainer = document.getElementById("fighter-controls");
+        controlsContainer.innerHTML = "";
+
+        const defaultFighter = fighters.find(f => f.fighter_name === "ILIA TOPURIA") ? "ILIA TOPURIA" : (fighters[0] && fighters[0].fighter_name) || "";
+
+        fighters.forEach((f, idx) => {
+          const id = "fighter-radio-" + idx;
+          const wrapper = document.createElement("div");
+          wrapper.className = "control-item";
+
+          const input = document.createElement("input");
+          input.type = "radio";
+          input.name = "fighter-select";
+          input.id = id;
+          input.value = f.fighter_name;
+          if (f.fighter_name === defaultFighter || idx === 0) input.checked = true;
+
+          const label = document.createElement("label");
+          label.htmlFor = id;
+          label.textContent = f.fighter_name + (f.division ? " — " + f.division : "");
+
+          input.addEventListener("change", (evt) => {
+            if (evt.target.checked) {
+              const name = evt.target.value;
+              // update radar (single fighter signal)
+              if (radarEmbed && radarEmbed.view) {
+                radarEmbed.view.signal("selected_fighter", name).runAsync();
+              }
+              // update pie & bar (they expect an array param selected_fighters)
+              if (pieEmbed && pieEmbed.view) {
+                pieEmbed.view.signal("selected_fighters", [name]).runAsync();
+              }
+              if (barEmbed && barEmbed.view) {
+                barEmbed.view.signal("selected_fighters", [name]).runAsync();
+              }
+              // update info panel
+              updateSelectedFighter(name);
+            }
+          });
+
+          wrapper.appendChild(input);
+          wrapper.appendChild(label);
+          controlsContainer.appendChild(wrapper);
+        });
+
+        // set initial selection (fire the change for the default)
+        const initialName = defaultFighter;
+        if (initialName) {
+          const setInitial = () => {
+            if (pieEmbed && pieEmbed.view) pieEmbed.view.signal("selected_fighters", [initialName]).runAsync();
+            if (barEmbed && barEmbed.view) barEmbed.view.signal("selected_fighters", [initialName]).runAsync();
+            if (radarEmbed && radarEmbed.view) radarEmbed.view.signal("selected_fighter", initialName).runAsync();
+            updateSelectedFighter(initialName);
+          };
+          setTimeout(setInitial, 80);
+        }
+
+      });
+
+    }).catch(console.error);
+
+    // function to update the info panel and image when selection changes
+    function updateSelectedFighter(name) {
+      const fighterNameEl = document.getElementById("fighter-name");
+      const fighterRecordEl = document.getElementById("fighter-record");
+      const fighterDivisionEl = document.getElementById("fighter-division");
+      const fighterProfileLinkEl = document.getElementById("fighter-profile-link");
+      const fighterImg = document.getElementById("fighter-img");
+
+      try {
+        const raw = radarEmbed.view.data("raw") || [];
+        const row = raw.find(d => (d.fighter_name || d.name || d.fighter || "").toString().trim() === name);
+        if (row) {
+          const fn = (row.fighter_name || row.name || row.fighter || "").toString().trim();
+          fighterNameEl.textContent = fn;
+          fighterRecordEl.textContent = "Record: " + (row.fight_record || row.Record || row.record || "");
+          fighterDivisionEl.textContent = "Division: " + (row.division || row.Division || "");
+          if (row.source_url) {
+            fighterProfileLinkEl.innerHTML = `Profile: <a href="${row.source_url}" target="_blank" rel="noopener noreferrer">${row.source_url}</a>`;
+          } else {
+            fighterProfileLinkEl.innerHTML = "";
+          }
+          if (row.image_url) {
+            fighterImg.src = row.image_url;
+            fighterImg.alt = fn + " image";
+          } else {
+            fighterImg.src = "";
+            fighterImg.alt = "Image not available — click profile link if provided";
+          }
+        } else {
+          fighterNameEl.textContent = name;
+          fighterRecordEl.textContent = "Record: —";
+          fighterDivisionEl.textContent = "Division: —";
+          fighterProfileLinkEl.innerHTML = "";
+          fighterImg.src = "";
+        }
+      } catch (e) {
+        console.warn("Could not update fighter info:", e);
+      }
+    }
+  </script>
+
+  <h2>Aussie Fighter Style Deepdive</h2>
+  <h3>Alexander Volkanovski</h3>
+  <p class="textbox">Alexander Volkanovski is a pressure striker who mixes high-volume output with excellent accuracy and movement. The dataset shows he lands 6.18 significant strikes per minute with a 57% striking accuracy (high percentiles for accuracy and volume), giving him the ability to outpoint opponents and consistently score head strikes. He defends strikes well and maintains distance; his takedown usage is modest (34% accuracy, limited takedown attempts), so he rarely relies on wrestling. Strengths: relentless pace, technical striking, good striking defense, and cardio. Weaknesses: not a one-punch knockout artist and a modest submission threat, vulnerable to fighters who can neutralize his range.</p>
+
+  <h3>Jack Della Maddalena</h3>
+  <p class="textbox">Jack Della Maddalena is a power-punching, high-volume welterweight who finishes fights early. The dataset shows 6.84 significant strikes landed per minute and a 52% striking accuracy, with 12 knockout wins (67% of his victories) and a high KO-power percentile—he targets the head (≈75% of significant strikes) and ends fights quickly (average fight time under eight minutes). Strengths: explosive power, aggressive pressure, and excellent finishing instincts. Weaknesses: limited wrestling (low takedown activity and accuracy), a smaller submission game, and potential problems if taken into deep, technical battles where elite grapplers or high-output counter-strikers can drag the fight into later rounds effectively.</p>
+
+  <!-- ========== SOURCES / FOOTER (small font, baby-blue background) ========== -->
+  <footer class="sources" role="contentinfo" aria-label="Sources and data">
+    <p>GitHub datasets (calculated by author) — Justin Yung. <em>ActiveChampion.csv</em>. 3179 repository, branch Week10_homework. Raw file: https://raw.githubusercontent.com/JustinYung1214/3179/refs/heads/Week10_homework/ActiveChampion.csv.</p>
+
+    <p>UFC roster and stats — UFC. “Athletes” (roster). https://www.ufc.com/athletes/all</p>
+
+    <p>Data for Jack Della Maddellena — https://gidstats.com/fighters/jack_della.html; http://ufcstats.com/fighter-details/6b453bc35a823c3f</p>
+  </footer>
+
+</body>
+</html>
